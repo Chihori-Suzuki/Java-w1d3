@@ -2,53 +2,33 @@ import java.lang.Math;
 
 public class PickACard {
     public static void main(String[] args) {
-        int rank = (int)(Math.random() * 13);
-        int suit = (int)(Math.random() * 5);
+
+        int max = 13; 
+        int min = 1; 
+        int range = max - min + 1; 
+        int rank = (int)(Math.random() * range) + min;
+
+        int suit = (int)(Math.random() * 4);
 
         String strRank = "";
         String strSuit = "";
 
         switch(rank){
-            case 0:
+            case 1:
                 strRank = "Ace";
                 break;
-            case 1:
-                strRank = "2";
-                break;
-            case 2:
-                strRank = "3";
-                break;
-            case 3:
-                strRank = "4";
-                break;
-            case 4:
-                strRank = "5";
-                break;
-            case 5:
-                strRank = "6";
-                break;
-            case 6:
-                strRank = "7";
-                break;
-            case 7:
-                strRank = "8";
-                break;
-            case 8:
-                strRank = "9";
-                break;
-            case 9:
-                strRank = "10";
-                break;
-            case 10:
+            case 11:
                 strRank = "Jack";
                 break;
-            case 11:
+            case 12:
                 strRank = "Queen";
                 break;
-            case 12:
+            case 13:
                 strRank = "King";
                 break;
-
+            default:
+                strRank = Integer.toString(rank);
+                break;
         }
 
         switch(suit){
